@@ -29,14 +29,14 @@ class Home extends Component {
 
       };
       Data.SendCity(city.city).then((res)=>{
-        if(res.data == "Error"){
-          this.setState({error: "City doesn't exist"})
+        if(res.data === "Error"){
+          this.setState({error: "Cette ville n'existe pas à votre liste."})
         }
-        else if(res.data == "City already exists"){
-          this.setState({error: "City already exists"})
+        else if(res.data === "Cette ville déjà ajoutée."){
+          this.setState({error: "Cette ville est déjà ajoutée à votre liste."})
         }
         else{
-          this.setState({error: "City add"})
+          this.setState({error: "Ville ajoutée à la liste."})
           this.UpdateCity()      
         }
     })
@@ -66,7 +66,7 @@ class Home extends Component {
                 <label >City</label>
                 <input type="text" class="form-control"  placeholder="Enter Name"  onChange={this.handleChangeCity}></input>
             </div>
-            <Button variant="default" className="button mt-1 ml-1" onClick={this.handleSubmit}>Add</Button>  
+            <Button variant="default" className="button mt-1 ml-1" onClick={this.handleSubmit}>Ajouter</Button>  
           </form>
           { this.state.error &&<h5 class= "alert alert-info" role="alert"> { this.state.error } </h5> }
           <div class="containercard p-3">

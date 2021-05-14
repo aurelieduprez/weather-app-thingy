@@ -39,7 +39,7 @@ class Register extends Component {
             password: this.state.password
         };
         Data.SendRegister(user.name,user.email,user.password).then((res)=>{
-            if(res.status == 400){
+            if(res.status === 400){
                 this.setState({error: res.data})
             }
             else{
@@ -60,14 +60,14 @@ class Register extends Component {
                     <input type="text" class="form-control"  placeholder="Enter Name"  onChange={this.handleChangeName}></input>
                 </div>
                 <div class="form-group">
-                    <label class="p-2" >Email address :</label>
+                    <label class="p-2" >Email :</label>
                     <input type="email" class="form-control"  placeholder="Enter Email" onChange={this.handleChangeEmail}></input>
                 </div>
                 <div class="form-group">
-                    <label class="p-2">Password :</label>
+                    <label class="p-2">Mot de passe :</label>
                     <input type="password" class="form-control" placeholder="Password" onChange={this.handleChangePassword}></input>
                 </div>
-                <button type="button" class="btn button mt-3" onClick={this.handleSubmit}>Sign up !</button>
+                <button type="button" class="btn button mt-3" onClick={this.handleSubmit}>S'inscrire</button>
             </form>
             { this.state.error &&<h5 class= "alert alert-info" role="alert"> { this.state.error } </h5> }
         </div>

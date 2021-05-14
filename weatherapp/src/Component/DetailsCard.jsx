@@ -6,8 +6,7 @@ class DetailsCard extends Component{
   render(){
       const milliseconds = this.props.data.dt * 1000;
       let dateobject = new Date(milliseconds);
-      let date = dateobject.toLocaleDateString("en-GB",{weekday: "long",month :"long",year :"numeric" ,day : "numeric"})
-      const rainProba = this.props.data.pop * 100;
+      let date = dateobject.toLocaleDateString("fr-FR",{weekday: "long",month :"long",year :"numeric" ,day : "numeric"})
       return (   
         <div class="p-3">
           <Card style={{ width: '18rem', backgroundColor: '#1C2942', color: 'white'}}>
@@ -20,13 +19,13 @@ class DetailsCard extends Component{
                 <Col sm={5}>
                   <br></br>
                   <Card.Text style={{textAlign: 'center', fontSize:19}}>
-                    {this.props.data.temp.day}°
+                    {this.props.data.temp.day}°C
                   </Card.Text>
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Min : {this.props.data.temp.min}°
+                    Min : {this.props.data.temp.min}°C
                   </Card.Text>
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Max : {this.props.data.temp.max}°
+                    Max : {this.props.data.temp.max}°C
                   </Card.Text>
                 </Col>
               </Row>
@@ -40,22 +39,7 @@ class DetailsCard extends Component{
                 </Col>
               </Row>
               <Row className="pt-2">
-                <Col sm={6}>
-                  <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Humidity : {this.props.data.humidity} %
-                  </Card.Text>
-                  <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Night : {this.props.data.temp.night}°
-                  </Card.Text>
-                </Col>
-                <Col sm={6}>
-                  <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Wind : {this.props.data.wind_speed} km/h
-                  </Card.Text>
-                  <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Rain : {rainProba} %
-                  </Card.Text>
-                </Col>
+
               </Row>
             </Card.Body>
           </Card>

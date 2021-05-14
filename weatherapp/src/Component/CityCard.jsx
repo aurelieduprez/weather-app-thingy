@@ -27,7 +27,7 @@ class CityCard extends Component{
       return (   
         <div class="p-3">
           <Card style={{ width: '18rem', backgroundColor: '#1C2942', color: 'white'}}>
-            <Card.Body>
+            <Card.Body class="card-body">
               <Card.Title style={{textAlign: 'center', fontSize:30}}>{this.props.city.name}</Card.Title>
               <Row>
                 <Col sm={7}> 
@@ -36,13 +36,13 @@ class CityCard extends Component{
                 <Col sm={5}>
                   <br></br>
                   <Card.Text style={{textAlign: 'center', fontSize:19}}>
-                    {this.props.city.main.temp}°
+                    {this.props.city.main.temp}°C
                   </Card.Text>
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Min : {this.props.city.main.temp_min}°
+                    Min : {this.props.city.main.temp_min}°C
                   </Card.Text>
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
-                    Max : {this.props.city.main.temp_max}°
+                    Max : {this.props.city.main.temp_max}°C
                   </Card.Text>
                 </Col>
               </Row>
@@ -60,8 +60,8 @@ class CityCard extends Component{
                     this.props.history.push('/Details', {
                     city: this.props.city.name,
                     coord: this.state.coord
-                  })}}>More Details</Button> 
-                <Button variant="default" className="button mt-1 ml-1" onClick={this.handleSubmit}>Delete</Button>  
+                  })}}>+</Button> 
+                <Button variant="default" className="button mt-1 ml-1" onClick={this.handleSubmit}>Supprimer</Button>  
               </Row>
             </Card.Body>
           </Card>

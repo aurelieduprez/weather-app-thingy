@@ -13,10 +13,10 @@ class Header extends Component{
           return (
               <div>
                 <nav className="navbar navbar-expand-lg headercolor">
-                  <a><Link to={'/'} className="navbar-brand headercolor"> SupWeather</Link></a>
+                  <a href="/"><Link to={'/'} className="navbar-brand headercolor"> SupWeather</Link></a>
                   <ul class="nav ml-auto">
-                    <li><Link to={'/Login'} className="nav-link headercolor">Login</Link></li>
-                    <li><Link to={'/Register'} className="nav-link headercolor">Register</Link></li>
+                    <li><Link to={'/Login'} className="nav-link headercolor">Se connecter</Link></li>
+                    <li><Link to={'/Register'} className="nav-link headercolor">S'inscrire</Link></li>
                   </ul>
                 </nav>
               </div>
@@ -28,9 +28,9 @@ class Header extends Component{
           return (
           <div>
             <nav className="navbar navbar-expand-lg headercolor">
-              <a><Link to={'/'} className="navbar-brand headercolor"> SupWeather </Link></a>
+              <a href="/"><Link to={'/'} className="navbar-brand headercolor"> SupWeather </Link></a>
               <ul class="nav ml-auto">
-                <li type="submit" class="headercolor" onClick={() =>{this.logout()}}>Logout </li>
+                <li type="submit" class="headercolor" onClick={() =>{this.logout()}}>Se déconnecter </li>
               </ul>
             </nav>
           </div>
