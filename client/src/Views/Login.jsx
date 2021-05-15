@@ -48,8 +48,8 @@ class Login extends Component {
         return (<Redirect to="/" />);
     }
     return (
-            <div class="container text-center mt-5 col-4 p-3 shadow backcolorform">
-                <form class="p-3" >
+            <div class="container text-center mt-5 col-4 p-3 backcolorform">
+                <form class="card-body" >
                     <div class="form-group">
                         <label class="pb-2">Email :</label>
                         <input type="email" class="form-control"  placeholder="Enter Email" onChange={this.handleChangeEmail}></input>

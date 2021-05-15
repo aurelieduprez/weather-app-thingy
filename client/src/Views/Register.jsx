@@ -53,8 +53,8 @@ class Register extends Component {
         return (<Redirect to="/" />);
     }
     return (
-        <div class="container text-center mt-5 col-4 p-3 shadow backcolorform">
-            <form class="p-3">
+        <div class="container text-center mt-5 col-4 p-3 backcolorform">
+            <form class="card-body">
                 <div class="form-group">
                     <label class="p-2" >Name :</label>
                     <input type="text" class="form-control"  placeholder="Enter Name"  onChange={this.handleChangeName}></input>

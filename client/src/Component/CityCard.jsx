@@ -26,7 +26,7 @@ class CityCard extends Component{
   render(){
       return (   
         <div class="p-3">
-          <Card style={{ width: '18rem', backgroundColor: '#1C2942', color: 'white'}}>
+          <Card >
             <Card.Body class="card-body">
               <Card.Title style={{textAlign: 'center', fontSize:30}}>{this.props.city.name}</Card.Title>
               <Row>

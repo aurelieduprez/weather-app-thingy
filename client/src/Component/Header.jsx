@@ -19,7 +19,9 @@ class Header extends Component{
                     <li><Link to={'/Register'} className="nav-link headercolor">S'inscrire</Link></li>
                   </ul>
                 </nav>
+                <a href= "https://github.com/aurelieduprez" class="footer">@aurelieduprez</a>
               </div>
+              
           )
       }
     }
@@ -33,6 +35,7 @@ class Header extends Component{
                 <li type="submit" class="headercolor" onClick={() =>{this.logout()}}>Se déconnecter </li>
               </ul>
             </nav>
+            <a href= "https://github.com/aurelieduprez" class="footer">@aurelieduprez</a>
           </div>
           )
       }

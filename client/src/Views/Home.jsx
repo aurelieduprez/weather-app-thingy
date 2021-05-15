@@ -63,8 +63,8 @@ class Home extends Component {
         <div class="container p-5">
           <form class="form-container" >
             <div class="form-group">
-                <label >City</label>
-                <input type="text" class="form-control"  placeholder="Enter Name"  onChange={this.handleChangeCity}></input>
+
+                <input type="text" class="form-control"  placeholder="Entrer une ville..."  onChange={this.handleChangeCity}></input>
             </div>
             <Button variant="default" className="button mt-1 ml-1" onClick={this.handleSubmit}>Ajouter</Button>  
           </form>
@@ -73,8 +73,10 @@ class Home extends Component {
           {this.state.citylist.map((city, index) => {
             return <CityCard key={index} city={city} CityRemoved={this.UpdateCity.bind(this)} />
           })} 
+          
           </div>
         </div>
+
     );
   }
 }
