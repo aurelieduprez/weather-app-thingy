@@ -42,6 +42,7 @@ body {
   background-image: url("../src/test.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: fixed;
 }
 
 .headercolor {
@@ -90,9 +91,10 @@ body {
 
 .card {
   border-radius: 50px !important ;
-  height: 320px;
-  width: 320px;
-  background-color: #867a8f !important;
+  height: 340px;
+  width: 325px;
+  background-color: transparent !important;
+  margin: 10px;
 }
 
 .form-container {

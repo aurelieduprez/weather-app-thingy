@@ -44,6 +44,9 @@ class CityCard extends Component{
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
                     Max : {this.props.city.main.temp_max}°C
                   </Card.Text>
+                  <Card.Text style={{textAlign: 'center', fontSize:14}}>
+                    Ressenti : {this.props.city.main.feels_like}°C
+                  </Card.Text>
                 </Col>
               </Row>
               <Row>

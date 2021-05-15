@@ -27,6 +27,7 @@ class DetailsCard extends Component{
                   <Card.Text style={{textAlign: 'center', fontSize:14}}>
                     Max : {this.props.data.temp.max}°C
                   </Card.Text>
+
                 </Col>
               </Row>
               <Row>
