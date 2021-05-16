@@ -8,7 +8,9 @@ class DetailsCard extends Component{
       let dateobject = new Date(milliseconds);
       let date = dateobject.toLocaleDateString("fr-FR",{weekday: "long",month :"long",year :"numeric" ,day : "numeric"})
       return (   
+
         <div class="p-3">
+                  {/* this render will bge exected for every day of the details page*/}
           <Card style={{ width: '18rem', backgroundColor: '#1C2942', color: 'white'}}>
             <Card.Body>
               <Card.Title style={{textAlign: 'center', fontSize:30}}>{date}</Card.Title>

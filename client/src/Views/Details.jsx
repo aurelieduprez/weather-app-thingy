@@ -13,7 +13,7 @@ class Details extends Component {
   }
 
   componentDidMount = () => {
-
+// decomposing the coords
     const coord = {
         lat : this.props.location.state.coord[0],
         lon : this.props.location.state.coord[1]
@@ -25,7 +25,7 @@ class Details extends Component {
   }
   
   render() {
-    if (!Data.GettheUser()) {
+    if (!Data.GetUser()) {
       return (<Redirect to="/Login" />);
     }
     return (

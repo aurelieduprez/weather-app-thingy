@@ -30,9 +30,9 @@ class Home extends Component {
       };
       Data.SendCity(city.city).then((res)=>{
         if(res.data === "Error"){
-          this.setState({error: "Cette ville n'existe pas à votre liste."})
+          this.setState({error: "Cette ville n'existe pas."})
         }
-        else if(res.data === "Cette ville déjà ajoutée."){
+        else if(res.data === "Cette ville est déjà ajoutée à votre liste."){
           this.setState({error: "Cette ville est déjà ajoutée à votre liste."})
         }
         else{
@@ -54,12 +54,12 @@ class Home extends Component {
   }
   
   render() {
-    if (!Data.GettheUser()) {
+    if (!Data.GetUser()) {
       return (<Redirect to="/Login" />);
     }
 
     return (
-
+//input to enter a city + add button + alert message 
         <div class="container p-5">
           <form class="form-container" >
             <div class="form-group">

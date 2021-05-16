@@ -8,8 +8,10 @@ import Details from "../Views/Details";
 
 class Header extends Component{
 
+
+  //header + footer when the user is not authentificated
     renderAuthButtons = () => {
-      if (!Data.GettheUser()) {
+      if (!Data.GetUser()) {
           return (
               <div>
                 <nav className="navbar navbar-expand-lg headercolor">
@@ -25,8 +27,10 @@ class Header extends Component{
           )
       }
     }
+
+    // render of header + footer when the user is authentificated
     renderAuthenticatedButtons = () => {
-      if (Data.GettheUser()) {
+      if (Data.GetUser()) {
           return (
           <div>
             <nav className="navbar navbar-expand-lg headercolor">
@@ -40,7 +44,7 @@ class Header extends Component{
           )
       }
     }
-
+//logout func
     logout = () => {
       Data.signout()
       window.location.reload()

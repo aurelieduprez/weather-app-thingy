@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+
+// model for each city in db
+
 const citySchema = new mongoose.Schema({
     city: {
         type: String,

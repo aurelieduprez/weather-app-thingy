@@ -10,15 +10,16 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 
 const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
+    windowMs: 15 * 60 * 1000, // 15 mins
+    max: 100 // limit each IP to 100 requests 
   });
 
 dotenv.config();
 
 app.use(helmet());
 
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => console.log('Connected to DB'));
+//connection with DB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => console.log('> DB is now connected'));
 
 app.use(cors({credentials :true,corsOptions}));
 
@@ -28,5 +29,6 @@ app.use('/api/user', authRoute, limiter);
 
 app.use('/api/weather', weatherRoute, limiter);
 
-app.listen(3001, () => console.log("Server up ! GLHF !"));
+//launch server on port 3001
+app.listen(3001, () => console.log("> The server is now running on port 3001"));
 

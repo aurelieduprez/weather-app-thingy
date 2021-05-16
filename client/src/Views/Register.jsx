@@ -38,7 +38,7 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         };
-        Data.SendRegister(user.name,user.email,user.password).then((res)=>{
+        Data.Register(user.name,user.email,user.password).then((res)=>{
             if(res.status === 400){
                 this.setState({error: res.data})
             }
@@ -49,10 +49,12 @@ class Register extends Component {
     }
 
     render() {
-    if (Data.GettheUser()) {
+    if (Data.GetUser()) {
         return (<Redirect to="/" />);
     }
     return (
+
+        //register form
         <div class="container text-center mt-5 col-4 p-3 backcolorform">
             <form class="card-body">
                 <div class="form-group">

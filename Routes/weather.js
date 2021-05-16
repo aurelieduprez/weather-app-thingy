@@ -39,6 +39,8 @@ router.get('/city', TokenValidate, async (req,res) => {
     const city = await City.find({userid : req.user._id}, {city:1, _id:0});
     let DetailsCity = []
 
+
+    //get weather for this city
     Promise.all(city.map(async (city) =>{
         await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city.city}&units=metric&appid=${process.env.KEY}&lang=fr`,{
             method: 'GET'
@@ -57,6 +59,8 @@ router.get('/city', TokenValidate, async (req,res) => {
 
 });
 
+
+//delete this city
 router.post('/delete', TokenValidate, async (req,res) => {
 
     const cityDelete = await City.findOne({city : req.body.city, userid: req.user._id});
@@ -77,7 +81,7 @@ router.post('/details', TokenValidate, async (req,res) => {
     let lon = req.body.coord.lon
 
     let OneCallCity = []
-
+//get details for a week for this specific city
     await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${process.env.KEY}&lang=fr`,{
         method: 'GET'
     })

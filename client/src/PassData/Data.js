@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 class Data {
-    
-    SendRegister = (name,email,password) => {
+
+
+  //axios route for register  
+    Register = (name,email,password) => {
         return axios.post(`http://localhost:3001/api/user/Register`, { name,email,password })
         .then(res => {
           return res
@@ -12,7 +14,8 @@ class Data {
         })
     }
 
-    SendLogin = (email,password) => {
+    //axios route for login
+    Login = (email,password) => {
       return axios.post(`http://localhost:3001/api/user/Login`, { email,password })
       .then((res)  => {
         
@@ -24,14 +27,17 @@ class Data {
         })
         }
 
-    GettheUser = () => {
+    //get the current user if authentificated thanks to the token
+    GetUser = () => {
       return localStorage.getItem("token");
     }
 
+    //signout
     signout = () => {
       localStorage.removeItem("token");
     }
 
+    //add a city
     SendCity = (city) => {
       return axios.post(`http://localhost:3001/api/weather/home`, {city}, {
         headers: {
@@ -45,6 +51,7 @@ class Data {
         })
     }
 
+    //get all cities
     GetCity = async () => {
       return axios.get(`http://localhost:3001/api/weather/city`,{
         headers: {
@@ -58,6 +65,7 @@ class Data {
         })
     }
 
+    //delete a city
     DeleteCity = async (city) => {
       return axios.post(`http://localhost:3001/api/weather/delete`,{city},{
         headers: {
@@ -71,6 +79,7 @@ class Data {
         })
     }
     
+    //get details from the coords of the city
     SendDetails = (coord) => {
       return axios.post(`http://localhost:3001/api/weather/details`, {coord}, {
         headers: {

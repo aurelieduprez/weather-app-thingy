@@ -3,6 +3,12 @@ import { Card, Button, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import Data from '../PassData/Data';
 
+
+
+
+//this component is used to generate the main city card and used for each city chosen by the user
+
+
 class CityCard extends Component{
 
   constructor(props) {
@@ -11,7 +17,7 @@ class CityCard extends Component{
         coord: [this.props.city.coord.lat, this.props.city.coord.lon]
     };
   }
-
+ // on submit, deletes the selected city from the list dynamically
   handleSubmit = event => {
 
     event.preventDefault();
@@ -22,7 +28,7 @@ class CityCard extends Component{
     })
       
   }
-
+ // render method of the card
   render(){
       return (   
         <div class="p-3">
@@ -31,10 +37,12 @@ class CityCard extends Component{
               <Card.Title style={{textAlign: 'center', fontSize:30}}>{this.props.city.name}</Card.Title>
               <Row>
                 <Col sm={7}> 
+                {/*choose the corresponding asset depending on the weather */}
                   <Card.Img variant="top" style={{height: '100%', width: '100%' }} src={`http://openweathermap.org/img/wn/${this.props.city.weather[0].icon}@4x.png`} />
                 </Col>
                 <Col sm={5}>
                   <br></br>
+                  {/*temperatures : main, min, max and feels-like*/}
                   <Card.Text style={{textAlign: 'center', fontSize:19}}>
                     {this.props.city.main.temp}°C
                   </Card.Text>

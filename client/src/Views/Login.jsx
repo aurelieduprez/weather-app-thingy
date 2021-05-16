@@ -32,7 +32,7 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         };
-        Data.SendLogin(user.email,user.password).then((res)=>{
+        Data.Login(user.email,user.password).then((res)=>{
             
             if(res.status === 400){
                 this.setState({error: res.data})
@@ -44,10 +44,12 @@ class Login extends Component {
     }
 
   render() {
-    if (Data.GettheUser()) {
+    if (Data.GetUser()) {
         return (<Redirect to="/" />);
     }
     return (
+
+        //login form
             <div class="container text-center mt-5 col-4 p-3 backcolorform">
                 <form class="card-body" >
                     <div class="form-group">
